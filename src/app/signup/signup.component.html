@@ -1,0 +1,36 @@
+<html>
+<body id="fullnm">
+ <h1> {{message}}</h1>
+<div id="signupSection">
+    <div class="info">
+      <h2>Cheap Flights</h2>
+      <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
+      <p>Book Now</p>
+    </div>
+    <form  class="signupForm" name="signupform" #userForm="ngForm" (onSubmit)="add()">
+      <h2>Sign Up</h2>
+      <ul class="noBullet">
+            <li>
+                    <label for="fullname"></label>
+                    <input type="text" class="inputFields" id="fullname" name="fullname" placeholder="Fullname" value="" [(ngModel)]="registr.fullname"  required/>
+            </li>
+        <li>
+          <label for="username"></label>
+          <input type="text" class="inputFields" id="username" name="username" placeholder="Username" value="" [(ngModel)]="registr.username"  required/>
+        </li>
+        <li>
+          <label for="password"></label>
+          <input type="password" class="inputFields" id="password" name="password" placeholder="Password" value="" [(ngModel)]="registr.pass" required/>
+        </li>
+        <li>
+          <label for="email"></label>
+          <input type="email" class="inputFields" id="email" name="email" placeholder="Email" value="" [(ngModel)]="registr.email" required/>
+        </li>
+        <li id="center-btn">
+          <button class="submit-btn" type="submit" (click)="add()">Join</button>
+        </li>
+      </ul>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+This is the angular part of online flight ticket booking application.

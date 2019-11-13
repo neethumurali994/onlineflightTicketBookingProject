@@ -1,0 +1,120 @@
+
+<html>
+        <body class="full">
+             <div id="booking" class="section">
+                 <div class="section-center">
+                     <div class="container">
+                         <div class="row">
+                             <div class="booking-form" id="booking-form">
+                                 <form #userForm="ngForm" (ngSubmit)="onsub()">
+                                    <h1 id="mainhead">Cheap Flights</h1>
+                                     <div class="form-group">
+                                         <div class="form-checkbox">
+                                             <label for="roundtrip">
+                                                 <input type="radio" id="roundtrip" name="flight-type" value="roundtrip" [(ngModel)]="userModel.flighttype">
+                                                 <span></span>Roundtrip
+                                             </label>
+                                             <label for="one-way">
+                                                 <input type="radio" id="one-way" name="flight-type" value="one-way" [(ngModel)]="userModel.flighttype">
+                                                 <span></span>One way
+                                             </label>
+                                             <label for="multi-city">
+                                                 <input type="radio" id="multi-city" name="flight-type" value="multi-city" [(ngModel)]="userModel.flighttype">
+                                                 <span></span>Multi-City
+                                             </label>
+                                         </div>
+                                     </div>
+                                     <div class="row">
+                                         <div class="col-md-6">
+                                             <div class="form-group">
+                                                 <span class="form-label">Flying from</span>
+                                                 <input class="form-control" type="text" id="from" name="from" placeholder="City or airport" [(ngModel)]="userModel.from">
+                                             </div>
+                                         </div>
+                                         <div class="col-md-6">
+                                             <div class="form-group">
+                                                 <span class="form-label">Flyning to</span>
+                                                 <input class="form-control" type="text" id="to" name="to" placeholder="City or airport" [(ngModel)]="userModel.to">
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <div class="row">
+                                         <div class="col-md-3">
+                                             <div class="form-group">
+                                                 <span class="form-label">Departing</span>
+                                                 <input class="form-control" type="date" name="depart" id="depart" required [(ngModel)]="userModel.depart">
+                                             </div>
+                                         </div>
+                                         <div class="col-md-3">
+                                             <div class="form-group">
+                                                 <span class="form-label">Returning</span>
+                                                 <input class="form-control" type="date"  name="ret" id="ret" required [(ngModel)]="userModel.ret">
+                                             </div>
+                                         </div>
+                                         <div class="col-md-2">
+                                             <div class="form-group">
+                                                 <span class="form-label">Adults (18+)</span>
+                                                 <select class="form-control" name="adult" [(ngModel)]="userModel.adult"> 
+                                                     <option *ngFor="let adult of adults">{{adult}}</option>
+                         
+                                                 </select>
+                                                 <span class="select-arrow"></span>
+                                             </div>
+                                         </div>
+                                         <div class="col-md-2">
+                                             <div class="form-group">
+                                                 <span class="form-label">Children (0-17)</span>
+                                                 <select class="form-control" name="child" [(ngModel)]="userModel.child">
+                                                     <option  *ngFor="let childs of child">{{childs}}</option>
+                                                     
+                                                 </select>
+                                                 <span class="select-arrow"></span>
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <div class="row">
+                                         <div class="col-md-3">
+                                             <div class="form-group">
+                                                 <span class="form-label">Travel class</span>
+                                                 <select class="form-control" name="classtype" [(ngModel)]="userModel.classtype">
+                                                     <option *ngFor="let classa of classtype">{{classa}}</option>
+                                                     
+                                                 </select>
+                                                 <span class="select-arrow"></span>
+                                             </div>
+                                         </div>
+                                         <div class="col-md-3">
+                                             <div class="form-btn">
+                                                 <button class="submit-btn" type="submit">Show flights</button>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </form>
+                             </div>
+                         </div>
+                         
+                         <div *ngIf = "value1">
+                             
+                             <h1 id="available">Available Flights</h1>
+                             <form name="book">
+                             <table  class="list"  *ngFor="let flight of products">
+                     
+                                 <tr >
+                                     <td>{{flight.flightname}}</td>
+                                     <td>{{flight.time}}</td>
+                                     <td>{{flight.fromplace}}----{{flight.toplace}}</td>
+                                     <td>rate:{{flight.rate}}AED</td>
+                                     <td> <button class="submit-btn" type="submit" (click)="booking(flight.flightname,flight.rate,flight.seats,flight.toplace,flight.id)">Book</button></td>
+                                     </tr>
+                                     <br><br>
+                                 </table>
+                                   </form>
+                                 
+                             </div>
+                     </div>
+                 </div>
+             </div>
+         </body>
+         
+         </html>
+         

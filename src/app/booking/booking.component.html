@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact V13</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
+
+		<div class="contact100-more">
+			<i class="zmdi zmdi-phone-in-talk"></i>
+			(+100) 345 6389
+		</div>
+
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" #userForm="ngForm">   
+				<span class="contact100-form-title">
+					Booking Confirmation Form
+				</span>
+
+				<div class="wrap-input100 validate-input" >
+					<span class="label-input100">Name</span>
+					<input class="input100" type="text" name="name" placeholder="Name..." [(ngModel)]="bookingobject.name"> 
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input">
+					<span class="label-input100">FROM</span>
+					<input class="input100" type="text" name="from" placeholder="Departure..." [(ngModel)]="bookingobject.fromplace">
+					<span class="focus-input100"></span>
+				</div>
+                <div class="wrap-input100 validate-input">
+					<span class="label-input100">TO</span>
+					<input class="input100" type="text" name="arrival" placeholder="Arrival..." [(ngModel)]="bookingobject.toplace">
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 validate-input">
+					<span class="label-input100">Date</span>
+					<input class="input100" type="text" name="date" placeholder="date..."  [(ngModel)]="bookingobject.dated">
+					<span class="focus-input100"></span>
+				</div>
+                <div class="wrap-input100 validate-input">
+					<span class="label-input100">Rate</span>
+					<input class="input100" type="text" name="rate" placeholder="rate..." [(ngModel)]="bookingobject.amount">
+					<span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input">
+					<span class="label-input100">No of passengers</span>
+					<input class="input100" type="text" name="No of passengers" placeholder="No of passengers..." [(ngModel)]="bookingobject.seats">
+					<span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input">
+					<span class="label-input100">flight</span>
+					<input class="input100" type="text" name="depart" placeholder="flightname..." [(ngModel)]="bookingobject.flightname">
+					<span class="focus-input100"></span>
+                </div>
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn" (click)="bookingconfirmation()">
+							Confirm
+						</button>
+		
+					</div>
+					<p>{{message}}</p>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+</body>
+</html>
