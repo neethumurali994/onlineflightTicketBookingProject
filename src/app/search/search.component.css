@@ -3,11 +3,38 @@
 	position: relative;
 	height: 100vh;
 }
+.new{
+	background-color:#333 ;
+	font:#fff;
+}
+
+.head{
+	position: fixed;
+	padding:0% 20%;
+	font-size: 20px ;
+	color:red;
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
+	font-weight: 300;
+	margin: 0;
+	padding: 1%;
+	overflow: hidden;
+	background-color: #333;
+	position: fixed;
+  top: 0;
+  width: 100%;
+}
+ .field-error{
+border:1px solid red;
+}
+.error{
+	background:rgba(82, 82, 84, 0.4); ;
+}
 
 .section .section-center {
 	position: absolute;
 	top: 50%;
-	left: 0;
+	left: 25%;
 	right: 0;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
@@ -197,5 +224,5 @@ td{
 }
 .full
 {
-	background: burlywood;
+	background:rgba(82, 82, 84, 0.4);
 }

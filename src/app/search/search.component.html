@@ -2,7 +2,14 @@
 <html>
         <body class="full">
              <div id="booking" class="section">
+                
+                   <div class="head">
+                       <button type="button" class="new" name="signin" (click)="buttonsignin()">SignIn</button>&nbsp;&nbsp;&nbsp;
+                       <button type="button" class="new" name="signUp" (click)="buttonsignup()">SignUp</button>
+                   </div>
+                   
                  <div class="section-center">
+                    
                      <div class="container">
                          <div class="row">
                              <div class="booking-form" id="booking-form">
@@ -11,7 +18,7 @@
                                      <div class="form-group">
                                          <div class="form-checkbox">
                                              <label for="roundtrip">
-                                                 <input type="radio" id="roundtrip" name="flight-type" value="roundtrip" [(ngModel)]="userModel.flighttype">
+                                                 <input type="radio" id="roundtrip" name="flight-type" value="roundtrip" [(ngModel)]="userModel.flighttype" >
                                                  <span></span>Roundtrip
                                              </label>
                                              <label for="one-way">
@@ -28,14 +35,17 @@
                                          <div class="col-md-6">
                                              <div class="form-group">
                                                  <span class="form-label">Flying from</span>
-                                                 <input class="form-control" type="text" id="from" name="from" placeholder="City or airport" [(ngModel)]="userModel.from">
+                                                 <input class="form-control is-invalid" type="text" id="from" name="from" required placeholder="City or airport" [(ngModel)]="userModel.from" #fromplace=ngModel [class.field-error]="userForm.submitted&&fromplace.invalid">
                                              </div>
+                                             <div  class="error" [hidden]="userForm.submitted||fromplace.valid||fromplace.untouched" class="alert alert-danger">From Place is Mandotory</div>
                                          </div>
                                          <div class="col-md-6">
                                              <div class="form-group">
                                                  <span class="form-label">Flyning to</span>
-                                                 <input class="form-control" type="text" id="to" name="to" placeholder="City or airport" [(ngModel)]="userModel.to">
-                                             </div>
+                                                 <input class="form-control" type="text" id="to" name="to" required placeholder="City or airport" [(ngModel)]="userModel.to" #toplace=ngModel  [class.field-error]="userForm.submitted&&toplace.invalid">
+                                                </div>
+                                                 <div  class="error" [hidden]="userForm.submitted||toplace.valid||toplace.untouched||toplace.empty" class="alert alert-danger">To Place is Mandotory</div>
+                                                
                                          </div>
                                      </div>
                                      <div class="row">
@@ -90,12 +100,14 @@
                                          </div>
                                      </div>
                                  </form>
+                                 <p style="color: ghostwhite;font-style: italic;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 20px;">{{nullmsg}} </p>
                              </div>
                          </div>
-                         
-                         <div *ngIf = "value1">
+                        
+                         <div *ngIf = "value1" class="flights">
                              
                              <h1 id="available">Available Flights</h1>
+                             <p style="color: darkred;font-style: italic;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 30px;">{{errormsg}}</p>
                              <form name="book">
                              <table  class="list"  *ngFor="let flight of products">
                      

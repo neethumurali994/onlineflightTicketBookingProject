@@ -1,17 +1,4 @@
 
-
-
-
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-
-
-  
-  
-  
-  /*//////////////////////////////////////////////////////////////////
-  [ RESTYLE TAG ]*/
-  
   * {
       margin: 0px; 
       padding: 0px; 
@@ -26,9 +13,10 @@
   /*---------------------------------------------*/
   a {
       font-family: Poppins-Regular;
-      font-size: 14px;
+      font-size: 50px;
+      font-weight: bolder;
       line-height: 1.7;
-      color: #666666;
+      color:#0000;
       margin: 0px;
       transition: all 0.4s;
       -webkit-transition: all 0.4s;
@@ -36,16 +24,7 @@
     -moz-transition: all 0.4s;
   }
   
-  a:focus {
-      outline: none !important;
-  }
-  
-  a:hover {
-      text-decoration: none;
-      color: #57b846;
-  }
-  
-  /*---------------------------------------------*/
+ 
   h1,h2,h3,h4,h5,h6 {
       margin: 0px;
   }
@@ -54,52 +33,33 @@
       font-family: Poppins-Regular;
       font-size: 14px;
       line-height: 1.7;
-      color: #666666;
+      color: #000;
       margin: 0px;
   }
   
-  ul, li {
-      margin: 0px;
-      list-style-type: none;
-  }
-  
-  
-  /*---------------------------------------------*/
   input {
       outline: none;
       border: none;
   }
   
-  textarea {
-    outline: none;
-    border: none;
-  }
   
-  textarea:focus, input:focus {
-    border-color: transparent !important;
-  }
+  
+  
   
   input:focus::-webkit-input-placeholder { color:transparent; }
   input:focus:-moz-placeholder { color:transparent; }
   input:focus::-moz-placeholder { color:transparent; }
   input:focus:-ms-input-placeholder { color:transparent; }
   
-  textarea:focus::-webkit-input-placeholder { color:transparent; }
-  textarea:focus:-moz-placeholder { color:transparent; }
-  textarea:focus::-moz-placeholder { color:transparent; }
-  textarea:focus:-ms-input-placeholder { color:transparent; }
+ 
   
-  input::-webkit-input-placeholder { color: #999999; }
-  input:-moz-placeholder { color: #999999; }
-  input::-moz-placeholder { color: #999999; }
-  input:-ms-input-placeholder { color: #999999; }
+  input::-webkit-input-placeholder { color:#fff; }
+  input:-moz-placeholder { color:#fff; }
+  input::-moz-placeholder { color: #fff; }
+  input:-ms-input-placeholder { color: #fff; }
   
-  textarea::-webkit-input-placeholder { color: #999999; }
-  textarea:-moz-placeholder { color: #999999; }
-  textarea::-moz-placeholder { color: #999999; }
-  textarea:-ms-input-placeholder { color: #999999; }
+ 
   
-  /*---------------------------------------------*/
   button {
       outline: none !important;
       border: none;
@@ -113,13 +73,6 @@
   iframe {
       border: none !important;
   }
-  
-  
-  
-  
-  
-  /*//////////////////////////////////////////////////////////////////
-  [ Contact 2 ]*/
   .bg-contact2 {
     width: 100%;  
     background-repeat: no-repeat;
@@ -155,8 +108,6 @@
   }
   
   
-  /*------------------------------------------------------------------
-  [  ]*/
   
   .contact2-form {
     width: 100%;
@@ -174,8 +125,7 @@
   
   
   
-  /*------------------------------------------------------------------
-  [  ]*/
+ 
   
   .wrap-input2 {
     width: 100%;
@@ -190,7 +140,7 @@
   
     font-family: Poppins-Regular;
     font-size: 15px;
-    color: #555555;
+    color: #000;
     line-height: 1.2;
   }
   
@@ -244,7 +194,6 @@
     transition: all 0.4s;
   }
   
-  /*---------------------------------------------*/
   input.input2 {
     height: 45px;
   }
@@ -349,19 +298,11 @@
     left: 0;
   }
   
-  /*------------------------------------------------------------------
-  [ Responsive ]*/
-  
   @media (max-width: 576px) {
     .wrap-contact2 {
       padding: 72px 15px 90px 15px;
     }
   }
-  
-  
-  
-  /*------------------------------------------------------------------
-  [ Alert validate ]*/
   
   .validate-input {
     position: relative;

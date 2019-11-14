@@ -1,6 +1,6 @@
 <html>
 <body id="fullnm">
- <h1> {{message}}</h1>
+ 
 <div id="signupSection">
     <div class="info">
       <h2>Cheap Flights</h2>
@@ -12,24 +12,29 @@
       <ul class="noBullet">
             <li>
                     <label for="fullname"></label>
-                    <input type="text" class="inputFields" id="fullname" name="fullname" placeholder="Fullname" value="" [(ngModel)]="registr.fullname"  required/>
+                    <input type="text" class="inputFields" id="fullname" name="fullname" placeholder="Fullname" value="" [(ngModel)]="registr.fullname"  required #userfullname=ngModel [class.field-error]="userForm.submitted&&userfullname.invalid"/>
+                    <div  class="error" [hidden]="userForm.submitted||userfullname.valid||userfullname.untouched" class="alert alert-danger">Name is Mandotory</div>
             </li>
         <li>
           <label for="username"></label>
-          <input type="text" class="inputFields" id="username" name="username" placeholder="Username" value="" [(ngModel)]="registr.username"  required/>
+          <input type="text" class="inputFields" id="username" name="username" placeholder="Username" value="" [(ngModel)]="registr.username"  required #userusername=ngModel [class.field-error]="userForm.submitted&&userusername.invalid"/>
+          <div  class="error" [hidden]="userForm.submitted||userusername.valid||userusername.untouched" class="alert alert-danger">Username is Mandotory</div>
         </li>
         <li>
           <label for="password"></label>
-          <input type="password" class="inputFields" id="password" name="password" placeholder="Password" value="" [(ngModel)]="registr.pass" required/>
+          <input type="password" class="inputFields" id="password" name="password" placeholder="Password" value="" [(ngModel)]="registr.pass" required #userpassword=ngModel [class.field-error]="userForm.submitted&&userpassword.invalid"/>
+          <div  class="error" [hidden]="userForm.submitted||userpassword.valid||userpassword.untouched" class="alert alert-danger">Password is Mandotory</div>
         </li>
         <li>
           <label for="email"></label>
-          <input type="email" class="inputFields" id="email" name="email" placeholder="Email" value="" [(ngModel)]="registr.email" required/>
+          <input type="email" class="inputFields" id="email" name="email" placeholder="Email" value="" [(ngModel)]="registr.email" required #useremail=ngModel [class.field-error]="userForm.submitted&&useremail.invalid"/>
+          <div  class="error" [hidden]="userForm.submitted||useremail.valid||useremail.untouched" class="alert alert-danger">Email is Mandotory</div>
         </li>
         <li id="center-btn">
           <button class="submit-btn" type="submit" (click)="add()">Join</button>
         </li>
       </ul>
+     <p style="color: red;"> {{message}}</p>
     </form>
   </div>
 </body>

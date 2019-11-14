@@ -9,6 +9,7 @@ import { SearchComponent } from './search/search.component';
 import { BookingComponent } from './booking/booking.component';
 import { SignupComponent } from './signup/signup.component';
 import { AdminComponent } from './admin/admin.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,12 +20,14 @@ import { AdminComponent } from './admin/admin.component';
     BookingComponent,
     SignupComponent,
     AdminComponent
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
    
     
   ],

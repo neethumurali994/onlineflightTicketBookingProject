@@ -7,26 +7,29 @@
 
 </head>
 <body>
-
-
 	<div class="container-contact100">
 		<div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
 
 		<div class="contact100-more">
 			<i class="zmdi zmdi-phone-in-talk"></i>
-			(+100) 345 6389
+			Book Your Flights Now<br>
+			CheapFlights.........
+			
 		</div>
-
+		<p style="color: darkred;font-style: italic; float: left;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 30px;">{{nullmsg}}</p>
+<p style="color: darkred;font-style: italic; float: left;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 30px;">{{seatmsg}}</p>
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" #userForm="ngForm">   
+			<form class="contact100-form validate-form" #userForm="ngForm" (ngSubmit)="bookingconfirmation()">   
 				<span class="contact100-form-title">
 					Booking Confirmation Form
 				</span>
 
 				<div class="wrap-input100 validate-input" >
 					<span class="label-input100">Name</span>
-					<input class="input100" type="text" name="name" placeholder="Name..." [(ngModel)]="bookingobject.name"> 
+					<input class="input100" type="text" name="name" placeholder="Name..." [(ngModel)]="bookingobject.name" #bookname=ngModel [class.field-error]="userForm.submitted&&bookname.invalid"> 
 					<span class="focus-input100"></span>
+					<div  class="error" [hidden]="userForm.submitted||bookname.valid||bookname.untouched" class="alert alert-danger">Name is Mandotory</div>
+                                        
 				</div>
 
 				<div class="wrap-input100 validate-input">
@@ -51,9 +54,10 @@
                 </div>
                 <div class="wrap-input100 validate-input">
 					<span class="label-input100">No of passengers</span>
-					<input class="input100" type="text" name="No of passengers" placeholder="No of passengers..." [(ngModel)]="bookingobject.seats">
-					<span class="focus-input100"></span>
-                </div>
+					<input class="input100" type="text" name="No of passengers" placeholder="No of passengers..." [(ngModel)]="bookingobject.seats" #bookseats=ngModel [class.field-error]="userForm.submitted&&bookseats.invalid">
+					<span class="focus-input100"></span>                    
+				</div>
+				<div  class="error" [hidden]="userForm.submitted||bookseats.valid||bookseats.untouched" class="alert alert-danger">No of Seats is Mandotory</div>
                 <div class="wrap-input100 validate-input">
 					<span class="label-input100">flight</span>
 					<input class="input100" type="text" name="depart" placeholder="flightname..." [(ngModel)]="bookingobject.flightname">
@@ -62,24 +66,16 @@
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn" (click)="bookingconfirmation()">
+						<button class="contact100-form-btn">
 							Confirm
 						</button>
 		
 					</div>
-					<p>{{message}}</p>
+					<p style="color: darkred;font-style: italic; float: left;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 30px;">{{message}}</p>
 				</div>
 			</form>
 		</div>
 	</div>
-
-
-
 	<div id="dropDownSelect1"></div>
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-
-
 </body>
 </html>
